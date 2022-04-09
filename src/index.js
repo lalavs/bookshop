@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+import BookStore from './store/BookStore';
+import './index.scss';
+
+export const Context = createContext(null);
+
 ReactDOM.render(
-    <React.StrictMode>
+    <Context.Provider value={{
+      books: new BookStore(),
+    }}>
       <App />
-    </React.StrictMode>,
+    </Context.Provider>,
     document.getElementById('root'),
 );
