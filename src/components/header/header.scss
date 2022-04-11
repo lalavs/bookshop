@@ -4,16 +4,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
   border-bottom: 2px solid #292f39;
+  &-logo {
+    width: 100px;
+    height: 96px;
+  }
+  &-title {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #292f39;
+  }
+  &-left {
+    display: flex;
+    align-items: center;
+  }
   &-right {
     display: flex;
     align-items: center;
   }
-}
-
-.logo {
-  width: 100px;
-  height: 96px;
 }
 
 .input {

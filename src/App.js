@@ -2,11 +2,16 @@ import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
 import AppRouter from './components/AppRouter';
+import Header from './components/header/Header';
+import './styles/container.scss';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <AppRouter />
+      <div className='container'>
+        <Header />
+        <AppRouter />
+      </div>
     </BrowserRouter>
   );
 };
