@@ -2,7 +2,7 @@ import React from 'react';
 
 import BooksList from '../components/bookslist/BooksList';
 import NavBar from '../components/navbar/NavBar';
-import '../styles/itemslist.scss';
+import '../styles/pages style/itemslist.scss';
 
 const ItemsList = () => {
   return (
