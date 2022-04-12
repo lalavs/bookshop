@@ -1,6 +1,6 @@
 import React from 'react';
-import BooksList from '../components/bookslist/BooksList';
 
+import BooksList from '../components/bookslist/BooksList';
 import NavBar from '../components/navbar/NavBar';
 import '../styles/itemslist.scss';
 

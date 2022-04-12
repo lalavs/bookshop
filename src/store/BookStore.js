@@ -8,11 +8,11 @@ export default class BookStore {
       {id: 3, name: 'Recently Returned'},
     ];
     this._items = [
-      {id: 1, name: 'Alice', price: 1, img: `../images/logo.png`},
-      {id: 2, name: 'Maria', price: 1, img: `../images/logo.png`},
-      {id: 3, name: 'Ksenia', price: 1, img: `../images/logo.png`},
-      {id: 4, name: 'Anna', price: 1, img: `../images/logo.png`},
-      {id: 5, name: 'Oks', price: 1, img: `../images/logo.png`},
+      {id: 1, name: 'Alice', price: 1},
+      {id: 2, name: 'Maria', price: 1},
+      {id: 3, name: 'Ksenia', price: 1},
+      {id: 4, name: 'Anna', price: 1},
+      {id: 5, name: 'Oks', price: 1},
     ];
     this._selectedSection = {};
 

@@ -13,7 +13,8 @@ const NavBar = observer(() => {
         <div
           key={section.id}
           onClick={() => books.setSelectedSection(section)}
-          className='navbar-item'>
+          className='navbar-item'
+        >
           {section.name}
         </div>,
       )}

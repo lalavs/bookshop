@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {observer} from 'mobx-react-lite';
 
 import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import BooksItem from '../booksitem/BooksItem';
 import './bookslist.scss';
 
 const BooksList = observer(() => {
@@ -10,11 +11,10 @@ const BooksList = observer(() => {
   return (
     <div className='bookslist'>
       {books.items.map((item) =>
-        <div
-          className='bookslist-item'
-          key={item.id}>
-          {item.name}
-        </div>,
+        <BooksItem
+          key={item.id}
+          items={item}>
+        </BooksItem>,
       )}
     </div>
   );
