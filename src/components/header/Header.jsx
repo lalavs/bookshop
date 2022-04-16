@@ -4,14 +4,14 @@ import {BiSearch} from 'react-icons/bi';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 
 import logo from '/Users/lala/Desktop/projects/bookshop/src/images/logo.png';
-import './header.scss';
+import './Header.scss';
 
 const Header = () => {
   return (
     <header className='header'>
-      <NavLink to='/list'>
+      <NavLink to='/'>
         <div className='header-left'>
-          <img className='header-logo' src={logo} />
+          <img className='header-logo' alt='' src={logo} />
           <h1 className='header-title'>Bookshop</h1>
         </div>
       </NavLink>
