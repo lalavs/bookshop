@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 import axios from 'axios';
 
@@ -7,13 +7,20 @@ import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 
 const ItemList = observer(() => {
   const {books} = useContext(Context);
+  const [loading, setLoadind] = useState(false);
 
   const fetchBooks = async () => {
-    const response = await axios({
-      url: 'http://openlibrary.org/subjects/art.json',
-      method: 'get',
-    })
-    return response.data.works;
+    try {
+      setLoadind(true);
+      const response = await axios({
+        url: 'http://openlibrary.org/subjects/romance.json',
+        method: 'get',
+      })
+      setLoadind(false);
+      return response.data.works;
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
@@ -22,7 +29,10 @@ const ItemList = observer(() => {
 
   return (
     <div>
-      <BookList />
+      {loading
+      ? <h1>Loading...</h1>
+      : <BookList />
+      }
     </div>
   );
 });
