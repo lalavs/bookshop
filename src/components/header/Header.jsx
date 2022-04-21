@@ -16,13 +16,6 @@ const Header = () => {
         </div>
       </NavLink>
       <div className='header-right'>
-        <div className='input-group'>
-          <input
-            className='input-search'
-            type='text'
-            placeholder='Search' />
-          <BiSearch className='input-icon'/>
-        </div>
         <NavLink to='/basket'>
           <AiOutlineShoppingCart className='basket'/>
         </NavLink>
