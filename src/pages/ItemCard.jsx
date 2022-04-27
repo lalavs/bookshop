@@ -11,8 +11,8 @@ const ItemCard = () => {
   const [loading, setLoadind] = useState(false);
 
   useEffect(() => {
-    setLoadind(true);
     let rawBook = null;
+    setLoadind(true);
     fetch(`https://openlibrary.org/works/${key}.json`)
       .then((res) => res.json())
       .then((data) => {
@@ -45,7 +45,7 @@ const ItemCard = () => {
           <>
             <div className='items-card'>
               <div className='items-visual'>
-                <img alt ='' src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-M.jpg`} />
+                <img alt ='' className='items-img' src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-M.jpg`} />
                 <div className='items-price'>Price: 1 $</div>
                 <button className='items-buybtn'>Add to cart</button>
               </div>

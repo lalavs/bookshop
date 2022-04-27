@@ -1,30 +1,45 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {observer} from 'mobx-react-lite';
 import {IoMdAddCircleOutline} from 'react-icons/io';
 
 import './BookItem.scss';
+import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 
-const BookItem = ({items}) => {
+const BookItem = observer(({item}) => {
+  const {basket} = useContext(Context);
+
+  const handleClick = () => {
+    basket.addToBasket(item)
+  }
+
   return (
     <div>
-      <div className='book'>
-        <img 
-          className='book-img' 
-          alt='' 
-          src={`https://covers.openlibrary.org/b/id/${items.cover_id}-M.jpg`} 
-        />
-        <div>{items.title}</div>
-      </div>
-      <button className='book-add'>
-        <IoMdAddCircleOutline className='book-add__icon'/>
-        <div>Add to cart</div>
-      </button>
+      <div key={item.key} className='book'>
+        <Link to={`${item.key.replace('/works', '')}`}>
+          <img 
+            className='book-img' 
+            alt='' 
+            src={`https://covers.openlibrary.org/b/id/${item.cover_id}-M.jpg`} 
+          />
+          <div>{item.title}</div>
+          </Link>
+          <button
+            className='book-add'
+            onClick={handleClick}
+          >
+            <IoMdAddCircleOutline className='book-add__icon' />
+            <div>1$</div>
+            <div>Add to cart</div>
+           </button>
+        </div>
     </div>
   );
-};
+});
 
 BookItem.propTypes = {
-  items: PropTypes.shape({
+  item: PropTypes.shape({
     title: PropTypes.string,
   }),
 };

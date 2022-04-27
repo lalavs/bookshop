@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {observer} from 'mobx-react-lite';
 import {NavLink} from 'react-router-dom';
-import {BiSearch} from 'react-icons/bi';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 
 import logo from '/Users/lala/Desktop/projects/bookshop/src/images/logo.png';
 import './Header.scss';
+import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 
-const Header = () => {
+
+const Header = observer(() => {
+  const {basket} = useContext(Context);
+
   return (
     <header className='header'>
       <NavLink to='/'>
@@ -19,9 +23,12 @@ const Header = () => {
         <NavLink to='/basket'>
           <AiOutlineShoppingCart className='basket'/>
         </NavLink>
+        <div className='basket-counter'>
+          <div className='basket-quantity'>{basket.basketCount}</div>
+        </div>
       </div>
     </header>
   );
-};
+});
 
 export default Header;

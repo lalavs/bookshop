@@ -1,4 +1,40 @@
-.table {
-  width: 80%;
-  margin: 0 auto;
+table th:last-child {
+  text-align: right;
+}
+
+.basket-items {
+  width: 100%;
+  &__empty {
+    text-align: center;
+  }
+  &__head {
+    font-size: 18px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: left;
+    color:#5d5b5b;
+  }
+  &__body td {
+    padding-bottom: 12px;
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.item-sum {
+  white-space: nowrap;
+}
+
+.basket-sum td {
+  padding: 24px 0;
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.sum-title {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #5d5b5b;
 }
