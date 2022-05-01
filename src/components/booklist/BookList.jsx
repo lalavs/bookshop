@@ -10,12 +10,12 @@ const BookList = observer(() => {
 
   return (
     <div className='book-list'>
-      {books.items.map((item) => 
+      {books.items.map((item) =>
         <div key={item.key}>
           <BookItem
             item={item}
           />
-        </div>
+        </div>,
       )}
     </div>
   );

@@ -6,7 +6,6 @@ import Header from './components/header/Header';
 import './styles/Container.scss';
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <div className='container'>

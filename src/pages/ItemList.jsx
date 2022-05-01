@@ -12,21 +12,21 @@ const ItemList = observer(() => {
   useEffect(() => {
     setLoadind(true);
     fetch('http://openlibrary.org/subjects/romance.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setLoadind(false);
-        return data.works;
-      })
-      .then((responses) => {
-        books.setItems(responses)
-      })
-  }, [books])
+        .then((res) => res.json())
+        .then((data) => {
+          setLoadind(false);
+          return data.works;
+        })
+        .then((responses) => {
+          books.setItems(responses);
+        });
+  }, [books]);
 
   return (
     <div>
-      {loading
-      ? <div className='loader' />
-      : <BookList />
+      {loading ?
+      <div className='loader' /> :
+      <BookList />
       }
     </div>
   );
