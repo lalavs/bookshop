@@ -8,13 +8,13 @@ import '../styles/pages style/Basket.scss';
 const Basket = observer(() => {
   const {basket} = useContext(Context);
 
-  const handleClick = () => {
-    basket.removeFromBasket(basket.item)
+  const handleClick = (item) => {
+    basket.removeFromBasket(item.key);
   }
 
   return (
     <>
-      {basket.basketCount === 0
+      {basket.basket.length === 0
         ?
         <div className='basket-items__empty'>Basket is empty</div> 
         :
@@ -30,13 +30,13 @@ const Basket = observer(() => {
           <tbody className='basket-items__body'>
             {basket.basket.map(item => {
               return (
-                <tr key={`shopping-cart-${item.book.key}`}>
-                  <td>{item.count}</td>
-                  <td>{item.book.title}</td>
-                  <td onClick={() => handleClick(item.book.key)}>
-                    <TiDeleteOutline />
+                <tr key={item.key}>
+                  <td>1</td>
+                  <td>{item.title}</td>
+                  <td>
+                    <TiDeleteOutline onClick={() => handleClick(item)}/>
                   </td>
-                  <td className='item-sum'>$ {item.count}</td>
+                  <td className='item-sum'>$ 1</td>
                 </tr>
               );
             })}   
@@ -44,11 +44,11 @@ const Basket = observer(() => {
           <tfoot className='basket-sum'>
             <tr>
               <td className='sum-title' colSpan='3'>Total</td>
-              <td>$ {basket.basketCount}</td>
+              <td>$ {basket.basket.length}</td>
             </tr>
           </tfoot>
         </table>
-          }
+      }
     </>
   );
 });

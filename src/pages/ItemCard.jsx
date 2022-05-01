@@ -30,6 +30,8 @@ const ItemCard = () => {
       })
   }, [key]);
 
+  console.log(key)
+
   return (
     <div>
       <Link to='/'>
@@ -43,11 +45,9 @@ const ItemCard = () => {
       <>
         {book && (
           <>
-            <div className='items-card'>
+            <div className='items-card' key={key}>
               <div className='items-visual'>
                 <img alt ='' className='items-img' src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-M.jpg`} />
-                <div className='items-price'>Price: 1 $</div>
-                <button className='items-buybtn'>Add to cart</button>
               </div>
               <div className='items-text'>
                 <h2>{book.title}</h2>
@@ -60,7 +60,7 @@ const ItemCard = () => {
       </>
     }
     </div>
-  )
-}
+  );
+};
 
 export default ItemCard;

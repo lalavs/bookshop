@@ -24,7 +24,7 @@ const Header = observer(() => {
           <AiOutlineShoppingCart className='basket'/>
         </NavLink>
         <div className='basket-counter'>
-          <div className='basket-quantity'>{basket.basketCount}</div>
+          <div className='basket-quantity'>{basket.basket.length}</div>
         </div>
       </div>
     </header>
