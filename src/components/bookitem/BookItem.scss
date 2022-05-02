@@ -10,15 +10,7 @@
     width: 180px;
     height: 270px;
   }
-  &-add {
-    display: flex;
-    justify-content: space-between;
-    width: 180px;
-    padding: 0 10px;
-    margin-bottom: 20px;
-  }
-  &-add__icon {
-    height: 26px;
-    width: 19px;
+  &-title {
+    margin-bottom: 10px;
   }
 }

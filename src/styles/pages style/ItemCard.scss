@@ -2,6 +2,7 @@
   width: 60px;
   height: 35px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .items {
@@ -14,11 +15,12 @@
     border: 1px solid #8a8686;
     border-radius: 3px;
     background: #e3cfa140;
-    height: 360px;
+    height: 385px;
   }
   &-img {
     width: 180px;
     height: 270px;
+    margin-bottom: 10px;
   }
   &-text {
     margin-left: 50px;

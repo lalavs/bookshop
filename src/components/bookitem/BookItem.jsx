@@ -2,11 +2,10 @@ import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react-lite';
-import {IoMdAddCircleOutline} from 'react-icons/io';
-import {TiDeleteOutline} from 'react-icons/ti';
 
-import './BookItem.scss';
+import AddAndRemoveBtn from '../button/AddAndRemoveBtn';
 import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import './BookItem.scss';
 
 const BookItem = observer(({item}) => {
   const {basket} = useContext(Context);
@@ -32,22 +31,10 @@ const BookItem = observer(({item}) => {
           />
           <div className='book-title'>{item.title}</div>
         </Link>
-        <button
-          className='book-add'
-          onClick={handleClick}
-        >
-          {isItemInBasket ?
-              <>
-                <TiDeleteOutline className='book-add__icon' />
-                <div>Remove</div>
-              </> :
-              <>
-                <IoMdAddCircleOutline className='book-add__icon' />
-                <div>1$</div>
-                <div>Add to cart</div>
-              </>
-          }
-        </button>
+        <AddAndRemoveBtn
+          isItemInBasket={isItemInBasket}
+          handleClick={handleClick}
+        />
       </div>
     </div>
   );
