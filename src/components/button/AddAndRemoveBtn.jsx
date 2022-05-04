@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {IoMdAddCircleOutline} from 'react-icons/io';
-import {TiDeleteOutline} from 'react-icons/ti';
 
 import './AddAndRemoveBtn.scss';
 
@@ -12,15 +10,7 @@ const AddAndRemoveBtn = ({isItemInBasket, handleClick}) => {
       onClick={handleClick}
     >
       {isItemInBasket ?
-        <>
-          <TiDeleteOutline className='add-remove-btn__icon' />
-          <div>Remove</div>
-        </> :
-        <>
-          <IoMdAddCircleOutline className='add-remove-btn__icon' />
-          <div>1$</div>
-          <div>Add to cart</div>
-        </>
+          'Remove' : 'Add to cart'
       }
     </button>
   );

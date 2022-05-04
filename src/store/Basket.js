@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import {makeAutoObservable, configure} from 'mobx';
 
 export default class Basket {
@@ -7,12 +6,24 @@ export default class Basket {
     makeAutoObservable(this);
   };
 
+  setBasket(items) {
+    this.basket = items;
+  };
+
+  get items() {
+    return this.basket;
+  };
+
   addToBasket(item) {
     this.basket.push(item);
   };
 
   removeFromBasket(key) {
     this.basket = this.basket.filter((item) => item.key !== key);
+  };
+
+  removeAll() {
+    this.basket = [];
   };
 };
 

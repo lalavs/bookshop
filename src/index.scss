@@ -6,10 +6,15 @@
   margin: 0;
 }
 
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 body {
   background-color: #f3f4f5;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   color: #292f39;
 }

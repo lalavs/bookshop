@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import {makeAutoObservable} from 'mobx';
 
 export default class BookStore {

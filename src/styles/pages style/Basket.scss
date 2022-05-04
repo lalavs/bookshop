@@ -38,3 +38,14 @@ table th:last-child {
   text-transform: uppercase;
   color: #5d5b5b;
 }
+
+.remove-all-btn {
+  width: 200px;
+  height: 36px;
+  float: right;
+  background: #f0c7a7;
+  border: 0.5px solid #5d5b5b;
+  border-radius: 3px;
+  font-size: 16px;
+  letter-spacing: .3em;
+}
