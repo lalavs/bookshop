@@ -3,9 +3,9 @@ import {observer} from 'mobx-react-lite';
 import {NavLink} from 'react-router-dom';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 
-import logo from '/Users/lala/Desktop/projects/bookshop/src/images/logo.png';
+import logo from '../../images/logo.png';
 import './Header.scss';
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import {Context} from '../../index';
 
 
 const Header = observer(() => {

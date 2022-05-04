@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {observer} from 'mobx-react-lite';
 
 import AddAndRemoveBtn from '../button/add and remove/AddAndRemoveBtn';
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import {Context} from '../../index';
 import './BookItem.scss';
 
 const BookItem = observer(({item}) => {

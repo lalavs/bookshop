@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import {TiDeleteOutline} from 'react-icons/ti';
 
 import GoBackBtn from '../components/button/go back/GoBackBtn';
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import {Context} from '../index';
 import '../styles/pages style/Basket.scss';
 
 const Basket = observer(() => {
@@ -54,7 +54,7 @@ const Basket = observer(() => {
             className='remove-all-btn'
             onClick={() => basket.removeAll()}
           >
-          Delete All
+            Delete All
           </button>
         </>
       }

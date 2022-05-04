@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {observer} from 'mobx-react-lite';
 
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import {Context} from '../../index';
 import BookItem from '../bookitem/BookItem';
 import './BookList.scss';
 

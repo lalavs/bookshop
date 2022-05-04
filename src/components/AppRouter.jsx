@@ -2,8 +2,8 @@ import React, {useContext, useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
 import {Routes, Route} from 'react-router-dom';
 
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
-import {routes} from '../Routes';
+import {Context} from '../index';
+import {routes} from '../routes';
 
 const AppRouter = observer(() => {
   const {basket} = useContext(Context);
@@ -12,6 +12,7 @@ const AppRouter = observer(() => {
 
   useEffect(() => {
     const data = sessionStorage.getItem('basketItemsStorage');
+
     if (data) {
       basket.setBasket(JSON.parse(data));
     }

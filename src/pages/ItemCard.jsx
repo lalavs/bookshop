@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import AddAndRemoveBtn from
   '../components/button/add and remove/AddAndRemoveBtn';
 import GoBackBtn from '../components/button/go back/GoBackBtn';
-import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
+import {Context} from '../index';
 import '../styles/pages style/ItemCard.scss';
 import '../styles/Loader.scss';
 
@@ -13,7 +13,7 @@ const ItemCard = observer(() => {
   const {key} = useParams();
   const {basket} = useContext(Context);
   const [book, setBook] = useState(null);
-  const [loading, setLoadind] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isItemInBasket = basket.basket.some((i) => i.key === `/works/${key}`);
 
@@ -27,11 +27,11 @@ const ItemCard = observer(() => {
 
   useEffect(() => {
     let rawBook = null;
-    setLoadind(true);
+    setLoading(true);
     fetch(`https://openlibrary.org/works/${key}.json`)
         .then((res) => res.json())
         .then((data) => {
-          setLoadind(false);
+          setLoading(false);
           rawBook = data;
           rawBook.description = typeof(rawBook.description) === 'string' ?
           rawBook.description : rawBook.description.value;
