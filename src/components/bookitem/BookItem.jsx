@@ -1,10 +1,9 @@
-/* eslint-disable max-len */
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react-lite';
 
-import AddAndRemoveBtn from '../button/AddAndRemoveBtn';
+import AddAndRemoveBtn from '../button/add and remove/AddAndRemoveBtn';
 import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 import './BookItem.scss';
 
@@ -20,19 +19,6 @@ const BookItem = observer(({item}) => {
       basket.addToBasket(item);
     }
   };
-
-  const newArr = [...basket.basket];
-
-  useEffect(() => {
-    const data = sessionStorage.getItem('basketItemsStorage');
-    if (data) {
-      basket.setBasket(JSON.parse(data));
-    }
-  }, []);
-
-  useEffect(() => {
-    sessionStorage.setItem('basketItemsStorage', JSON.stringify(basket.basket));
-  }, [newArr]);
 
   return (
     <div>

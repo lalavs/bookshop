@@ -1,9 +1,10 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {observer} from 'mobx-react-lite';
-import {useParams, Link} from 'react-router-dom';
-import {MdArrowBack} from 'react-icons/md';
+import {useParams} from 'react-router-dom';
 
-import AddAndRemoveBtn from '../components/button/AddAndRemoveBtn';
+import AddAndRemoveBtn from
+  '../components/button/add and remove/AddAndRemoveBtn';
+import GoBackBtn from '../components/button/go back/GoBackBtn';
 import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 import '../styles/pages style/ItemCard.scss';
 import '../styles/Loader.scss';
@@ -47,9 +48,7 @@ const ItemCard = observer(() => {
 
   return (
     <>
-      <Link to='/'>
-        <MdArrowBack className='nav'/>
-      </Link>
+      <GoBackBtn />
 
       {loading ?
       <div className='loader' /> :

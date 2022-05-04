@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, {useContext} from 'react';
 import {observer} from 'mobx-react-lite';
 import {NavLink} from 'react-router-dom';
@@ -11,18 +10,6 @@ import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 
 const Header = observer(() => {
   const {basket} = useContext(Context);
-
-  // localStorage.setItem ("object", JSON.stringify("object"));
-  // object = JSON.parse (localStorage.getItem ("object"));
-
-  // const basketCount = basket.basket;
-  // sessionStorage.setItem('basketCountStorage', JSON.stringify(basketCount));
-  // const basketCountStorage = JSON.parse(sessionStorage.getItem('basketCountStorage'));
-  // console.log(basketCountStorage);
-
-  // useEffect(() => {
-  //   localStorage.setItem('basketCountStorage', JSON.stringify(basket.basket));
-  // });
 
   return (
     <header className='header'>

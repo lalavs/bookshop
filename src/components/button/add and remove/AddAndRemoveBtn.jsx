@@ -10,7 +10,7 @@ const AddAndRemoveBtn = ({isItemInBasket, handleClick}) => {
       onClick={handleClick}
     >
       {isItemInBasket ?
-          'Remove' : 'Add to cart'
+        'Remove' : 'Add to cart'
       }
     </button>
   );

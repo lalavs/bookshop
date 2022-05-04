@@ -1,7 +1,8 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {observer} from 'mobx-react-lite';
 import {TiDeleteOutline} from 'react-icons/ti';
 
+import GoBackBtn from '../components/button/go back/GoBackBtn';
 import {Context} from '/Users/lala/Desktop/projects/bookshop/src/index.js';
 import '../styles/pages style/Basket.scss';
 
@@ -12,21 +13,10 @@ const Basket = observer(() => {
     basket.removeFromBasket(item.key);
   };
 
-  const newArr = [...basket.basket];
-
-  useEffect(() => {
-    const data = sessionStorage.getItem('basketItemsStorage');
-    if (data) {
-      basket.setBasket(JSON.parse(data));
-    }
-  }, []);
-
-  useEffect(() => {
-    sessionStorage.setItem('basketItemsStorage', JSON.stringify(newArr));
-  }, [newArr]);
-
   return (
     <>
+      <GoBackBtn />
+
       {basket.basket.length === 0 ?
         <div className='basket-items__empty'>Basket is empty</div> :
         <>
