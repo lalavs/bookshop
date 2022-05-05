@@ -11,7 +11,7 @@ const ItemList = observer(() => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://openlibrary.org/subjects/romance.json')
+    fetch('https://openlibrary.org/subjects/romance.json')
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
